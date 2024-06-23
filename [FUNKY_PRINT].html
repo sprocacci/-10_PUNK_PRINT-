@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>👾 \m/ PUNK PRINT \m/ 👾</title>
+  <link rel="stylesheet" href="style_print.css">
+  
+  <style>
+    /* Aggiungere qui eventuali stili aggiuntivi personalizzati */
+  </style>
+</head>
+<body>
+  <h1 class="title-h1">\m/ 10 PUNK PRINT \m/</h1> 
+  <div id="videoContainer"></div>
+
+  <div id="controlContainer">
+    <div class="container">
+      <input type="file" id="videoUpload" accept="video/*" class="custom-file-upload">
+      <label id="videoUploadLabel" for="videoUpload">CARICA UN VIDEO</label>
+    </div>
+    <div class="container">
+      <button id="patternButton">PATTERN</button>
+    </div>
+    <div class="container">
+      <div id="colorPickerContainer">
+        <input type="color" id="colorPicker">
+      </div>
+    </div>
+    <div class="container">
+      <div id="outlineColorPickerContainer">
+        <input type="color" id="outlineColorPicker">
+      </div>
+    </div>
+    <div class="container">
+      <input type="range" id="patternSlider" min="0" max="255" value="127">
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+  <script src="script_print.js"></script>
+</body>
+</html>

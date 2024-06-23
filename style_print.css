@@ -1,0 +1,189 @@
+@font-face {
+  font-family: 'M+1M';
+  src: url('fonts/XanhMono-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Suisse Works';
+  src: url('fonts/Giulia Boggio - Bastardo Groteskish Regular.otf') format('truetype');
+}
+
+body {
+  background-color: black !important;
+  color: white !important;
+  font-family: 'M+1M', monospace;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  margin: 0; /* Rimuove il margine predefinito */
+  padding: 0; /* Rimuove il padding predefinito */
+}
+
+h1 {
+  font-family: 'Suisse Works', serif;
+  font-size: 48px;
+  margin: 10px;
+}
+
+canvas {
+  max-height: calc(80vh - 100px); 
+  max-width: 72vw;
+  display: block;
+}
+
+.container {
+  margin-top: -1px;
+}
+
+#videoContainer {
+  position: relative; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+#controlContainer {
+  position: fixed;
+  width: 100%;
+  left: 0%;
+  bottom: 0%;
+}
+
+#patternButton:active {
+  background-color: white; /* Sfondo bianco al passaggio */
+  color: black; /* Testo nero al passaggio */
+}
+
+/* Nascondi il pulsante di Browse ma lascialo accessibile per l'interazione */
+#videoUpload {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* Stile per il testo che mostra il nome del file */
+#videoUploadLabel {
+  color: white; /* Colore del testo bianco */
+  font-family: 'M+1M', monospace; /* Font-family desiderato */
+  font-size: 14px; /* Dimensione del testo */
+  padding: 5px 10px; /* Aggiunge spazio intorno al testo */
+  border: 1px solid white; /* Aggiunge una cornice bianca */
+  cursor: pointer; /* Cambia il cursore al passaggio */
+  display: flex; /* Utilizza flexbox per il posizionamento */
+  align-items: center; /* Centra verticalmente */
+  justify-content: center; /* Centra orizzontalmente */
+  width: 100%; /* Larghezza del pulsante */
+  height: 29px; /* Altezza del pulsante */
+  box-sizing: border-box; /* Include padding e bordo nella larghezza e altezza */
+}
+
+/* Cambia lo stile del pulsante quando è cliccato */
+#videoUploadLabel:active {
+  background-color: white; /* Sfondo bianco */
+  color: black; /* Testo nero */
+}
+
+#patternButton {
+  font-family: 'M+1M', monospace;
+  font-size: 14px;
+  height: 29px;
+  background-color: black;
+  color: white;
+  width: 100vw; /* Larghezza pari alla larghezza della finestra */
+  margin: 0; /* Rimuove il margine predefinito */
+  padding: 0; /* Rimuove il padding predefinito */
+  border: 1px solid white; /* Bordo bianco */
+  outline: none; /* Rimuove l'outline predefinito */
+}
+
+/* Stile per il selettore di colore */
+#colorPicker {
+  width: 100%; /* Larghezza del selettore */
+  height: 29px; /* Altezza del selettore */
+  border: 1px solid white; /* Contorno bianco */
+  box-sizing: border-box; /* Include bordo nella larghezza e altezza */
+  cursor: pointer; /* Cambia il cursore al passaggio */
+  appearance: none; /* Rimuove lo stile predefinito del selettore */
+  -webkit-appearance: none; /* Rimuove lo stile predefinito del selettore per Safari */
+  outline: none; /* Rimuove il contorno quando è selezionato */
+  padding: 0; /* Rimuove il padding */
+  margin: 0; /* Rimuove il margin */
+}
+
+#outlineColorPickerContainer {
+  margin-top: -4px; 
+  margin-bottom: -4px;;
+}
+
+#outlineColorPicker {
+  width: 100%;
+  height: 29px;
+  border: 1px solid white;
+  box-sizing: border-box;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  padding: 0;
+  margin: 0;
+  
+}
+
+/* Stili aggiornati per il pattern slider */
+#patternSlider {
+  width: 100% ; /* Larghezza del slider, sottraendo il margine aggiunto */
+  box-sizing: border-box; /* Include bordo nella larghezza e altezza */
+  height: 29px; /* Altezza del slider */
+  -webkit-appearance: none; /* Rimuove lo stile predefinito del slider per WebKit */
+  appearance: none; /* Rimuove lo stile predefinito del slider */
+  background: black; /* Colore di sfondo del slider */
+  outline: none; /* Rimuove l'outline quando è selezionato */
+  border: 1px solid white; /* Bordo bianco di 2px */
+  padding: 0; /* Rimuove il padding */
+  margin: 0; /* Rimuove il margin */
+
+}
+
+#patternSlider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Rimuove lo stile predefinito del thumb per WebKit */
+  appearance: none; /* Rimuove lo stile predefinito del thumb */
+  width: 2px; /* Larghezza della barra verticale */
+  height: 29px; /* Altezza del thumb */
+  background-color: white; /* Colore di sfondo del thumb */
+  cursor: pointer; /* Cambia il cursore al passaggio */
+  border: 0px solid white; /* Aggiungi un bordo bianco */
+}
+
+#patternSlider::-moz-range-thumb {
+  width: 2px; /* Larghezza della barra verticale per Firefox */
+  height: 29px; /* Altezza del thumb per Firefox */
+  background-color: white; /* Colore di sfondo del thumb per Firefox */
+  cursor: pointer; /* Cambia il cursore al passaggio per Firefox */
+  border: 0px;
+}
+
+/* Pseudo-elementi per Firefox */
+input[type="color"] {
+  border: none; /* Rimuove il bordo */
+  padding: 0; /* Rimuove il padding */
+  margin: 0; /* Rimuove il margin */
+}
+
+input[type="color"]::-moz-color-swatch {
+  border: none; /* Rimuove il bordo */
+  padding: 0; /* Rimuove il padding */
+  margin: 0; /* Rimuove il margin */
+}
+
+input[type="color"]::-moz-focus-inner {
+  border: none; /* Rimuove il bordo */
+  padding: 0; /* Rimuove il padding */
+  margin: 0; /* Rimuove il margin */
+}
